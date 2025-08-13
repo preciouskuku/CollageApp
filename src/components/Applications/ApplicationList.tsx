@@ -7,7 +7,8 @@ import {
   CheckCircle,
   Clock,
   AlertTriangle,
-  Eye
+  Eye,
+  FileText
 } from 'lucide-react';
 import { useApp } from '../../contexts/AppContext';
 
@@ -17,39 +18,60 @@ const ApplicationList: React.FC = () => {
   const [statusFilter, setStatusFilter] = useState('all');
   const [showNewApplicationModal, setShowNewApplicationModal] = useState(false);
 
-  // Mock applications for demonstration
+  // Zimbabwean universities applications mock
   const mockApplications = [
     {
       id: '1',
       studentId: '1',
       universityId: '1',
-      universityName: 'Harvard University',
+      universityName: 'University of Zimbabwe',
       status: 'submitted' as const,
-      submittedAt: '2024-10-15',
+      submittedAt: '2025-08-01',
       completionPercentage: 100,
-      deadline: '2024-11-01',
+      deadline: '2025-09-30',
       type: 'Early Decision'
     },
     {
       id: '2',
       studentId: '1',
       universityId: '2',
-      universityName: 'Stanford University',
+      universityName: 'National University of Science and Technology (NUST)',
       status: 'draft' as const,
-      completionPercentage: 75,
-      deadline: '2024-11-01',
+      completionPercentage: 60,
+      deadline: '2025-10-05',
       type: 'Early Action'
     },
     {
       id: '3',
       studentId: '1',
       universityId: '3',
-      universityName: 'MIT',
+      universityName: 'Africa University',
       status: 'under-review' as const,
-      submittedAt: '2024-10-10',
+      submittedAt: '2025-08-05',
       completionPercentage: 100,
-      deadline: '2024-11-01',
+      deadline: '2025-10-10',
       type: 'Early Action'
+    },
+    {
+      id: '4',
+      studentId: '1',
+      universityId: '4',
+      universityName: 'Midlands State University',
+      status: 'draft' as const,
+      completionPercentage: 40,
+      deadline: '2025-10-15',
+      type: 'Regular'
+    },
+    {
+      id: '5',
+      studentId: '1',
+      universityId: '5',
+      universityName: 'Great Zimbabwe University',
+      status: 'submitted' as const,
+      submittedAt: '2025-08-07',
+      completionPercentage: 100,
+      deadline: '2025-10-20',
+      type: 'Regular'
     }
   ];
 
@@ -106,7 +128,7 @@ const ApplicationList: React.FC = () => {
         <div>
           <h1 className="text-2xl font-bold text-gray-900">My Applications</h1>
           <p className="text-gray-600 mt-1">
-            Track and manage your college applications
+            Track and manage your Zimbabwean university applications
           </p>
         </div>
         <button
@@ -241,7 +263,7 @@ const ApplicationList: React.FC = () => {
           <p className="text-gray-600 mb-4">
             {searchTerm || statusFilter !== 'all' 
               ? 'Try adjusting your search criteria'
-              : 'Start your college journey by creating your first application'
+              : 'Start your Zimbabwean university journey by creating your first application'
             }
           </p>
           <button

@@ -18,7 +18,32 @@ const UniversityList: React.FC = () => {
   const [locationFilter, setLocationFilter] = useState('all');
   const [sortBy, setSortBy] = useState('name');
 
-  const filteredUniversities = universities
+  // Add Polytech to universities if not already present
+  const allUniversities = [
+    ...universities,
+    {
+      id: 'polytech',
+      name: 'Zimbabwe Polytechnic',
+      location: 'Harare',
+      description: 'Leading technical university offering engineering and applied sciences.',
+      logo: '/assets/polytech-logo.jpg', // replace with actual logo path
+      acceptanceRate: 70,
+      applicationFee: 20,
+      ranking: 6,
+      deadlines: {
+        earlyDecision: '2025-08-15',
+        earlyAction: '2025-08-30',
+        regular: '2025-09-15'
+      },
+      requirements: [
+        { type: 'high-school-transcript', required: true },
+        { type: 'recommendation-letter', required: true },
+        { type: 'personal-statement', required: false }
+      ]
+    }
+  ];
+
+  const filteredUniversities = allUniversities
     .filter(uni => {
       const matchesSearch = uni.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
                           uni.location.toLowerCase().includes(searchTerm.toLowerCase());
@@ -41,7 +66,7 @@ const UniversityList: React.FC = () => {
   const handleApply = (universityId: string) => {
     const newApplication = {
       id: Date.now().toString(),
-      studentId: '1', // Current user ID
+      studentId: '1',
       universityId,
       status: 'draft' as const,
       completionPercentage: 0,
@@ -51,7 +76,6 @@ const UniversityList: React.FC = () => {
     };
     
     addApplication(newApplication);
-    // In a real app, this would navigate to the application form
     alert('Application started! Check your Applications page to continue.');
   };
 
@@ -61,7 +85,7 @@ const UniversityList: React.FC = () => {
       <div>
         <h1 className="text-2xl font-bold text-gray-900">Find Universities</h1>
         <p className="text-gray-600 mt-1">
-          Discover and apply to universities that match your goals
+          Discover and apply to Zimbabwean universities that match your goals
         </p>
       </div>
 
@@ -86,9 +110,10 @@ const UniversityList: React.FC = () => {
           className="border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
         >
           <option value="all">All Locations</option>
-          <option value="CA">California</option>
-          <option value="MA">Massachusetts</option>
-          <option value="NY">New York</option>
+          <option value="Harare">Harare</option>
+          <option value="Bulawayo">Bulawayo</option>
+          <option value="Masvingo">Masvingo</option>
+          <option value="Mutare">Mutare</option>
         </select>
 
         <select
@@ -106,7 +131,7 @@ const UniversityList: React.FC = () => {
       {/* Results Count */}
       <div className="flex items-center justify-between">
         <p className="text-gray-600">
-          Showing {filteredUniversities.length} of {universities.length} universities
+          Showing {filteredUniversities.length} of {allUniversities.length} universities
         </p>
       </div>
 
@@ -114,7 +139,6 @@ const UniversityList: React.FC = () => {
       <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
         {filteredUniversities.map((university) => (
           <div key={university.id} className="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
-            {/* University Image */}
             <div className="h-48 bg-gradient-to-r from-blue-500 to-blue-600 relative">
               <img 
                 src={university.logo} 
@@ -135,16 +159,12 @@ const UniversityList: React.FC = () => {
 
             <div className="p-6">
               <div className="mb-4">
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                  {university.name}
-                </h3>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">{university.name}</h3>
                 <div className="flex items-center text-gray-600 mb-2">
                   <MapPin className="w-4 h-4 mr-1" />
                   <span className="text-sm">{university.location}</span>
                 </div>
-                <p className="text-gray-600 text-sm line-clamp-2">
-                  {university.description}
-                </p>
+                <p className="text-gray-600 text-sm line-clamp-2">{university.description}</p>
               </div>
 
               {/* Stats */}

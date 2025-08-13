@@ -27,104 +27,107 @@ export const useApp = () => {
 const mockUniversities: University[] = [
   {
     id: '1',
-    name: 'Harvard University',
-    location: 'Cambridge, MA',
-    logo: 'https://images.pexels.com/photos/267885/pexels-photo-267885.jpeg?auto=compress&cs=tinysrgb&w=100',
-    description: 'Harvard University is a private Ivy League research university in Cambridge, Massachusetts.',
+    name: 'University of Zimbabwe',
+    location: 'Harare, Zimbabwe',
+    logo: '/assets/uz-logo.jpg',
+    description: 'The oldest and largest university in Zimbabwe offering a wide range of undergraduate and postgraduate programs.',
     requirements: [
-      { type: 'transcript', required: true, description: 'Official high school transcript' },
-      { type: 'sat-score', required: true, description: 'SAT or ACT scores' },
-      { type: 'recommendation', required: true, description: '2 teacher recommendations' },
-      { type: 'essay', required: true, description: 'Personal statement' }
+      { type: 'high-school-transcript', required: true, description: 'Official high school transcript' },
+      { type: 'recommendation-letter', required: true, description: 'Teacher recommendation letter' }
     ],
     supplementalQuestions: [
       {
         id: '1',
-        question: 'What would you want your future college roommate to know about you?',
-        type: 'essay',
-        maxWords: 150,
-        required: true
-      },
-      {
-        id: '2',
-        question: 'How do you hope to use your college education?',
+        question: 'Why do you want to study at University of Zimbabwe?',
         type: 'essay',
         maxWords: 200,
         required: true
       }
     ],
     deadlines: {
-      earlyDecision: '2024-11-01',
-      regular: '2024-01-01'
+      regular: '2025-09-01'
     },
-    applicationFee: 85,
-    acceptanceRate: 3.4,
-    ranking: 2
+    applicationFee: 30,
+    acceptanceRate: 60,
+    ranking: 1
   },
   {
     id: '2',
-    name: 'Stanford University',
-    location: 'Stanford, CA',
-    logo: 'https://images.pexels.com/photos/1454360/pexels-photo-1454360.jpeg?auto=compress&cs=tinysrgb&w=100',
-    description: 'Stanford University is a private research university in Stanford, California.',
+    name: 'National University of Science and Technology (NUST)',
+    location: 'Bulawayo, Zimbabwe',
+    logo: '/assets/nust-logo.jpg',
+    description: 'Specializes in science, engineering, and technology programs in Zimbabwe.',
     requirements: [
-      { type: 'transcript', required: true, description: 'Official high school transcript' },
-      { type: 'sat-score', required: false, description: 'SAT or ACT scores (test-optional)' },
-      { type: 'recommendation', required: true, description: '3 teacher recommendations' },
-      { type: 'essay', required: true, description: 'Personal statement and supplemental essays' }
+      { type: 'high-school-transcript', required: true, description: 'Official high school transcript' },
+      { type: 'recommendation-letter', required: true, description: 'Teacher recommendation letter' }
     ],
     supplementalQuestions: [
       {
         id: '1',
-        question: 'What matters to you, and why?',
+        question: 'Why choose NUST for your studies?',
         type: 'essay',
-        maxWords: 250,
-        required: true
-      },
-      {
-        id: '2',
-        question: 'Tell us about something that is meaningful to you and why.',
-        type: 'short-answer',
-        maxWords: 100,
+        maxWords: 200,
         required: true
       }
     ],
     deadlines: {
-      earlyAction: '2024-11-01',
-      regular: '2024-01-05'
+      regular: '2025-08-31'
     },
-    applicationFee: 90,
-    acceptanceRate: 3.9,
-    ranking: 6
+    applicationFee: 25,
+    acceptanceRate: 65,
+    ranking: 2
   },
   {
     id: '3',
-    name: 'Massachusetts Institute of Technology',
-    location: 'Cambridge, MA',
-    logo: 'https://images.pexels.com/photos/159844/cellular-education-classroom-159844.jpeg?auto=compress&cs=tinysrgb&w=100',
-    description: 'MIT is a private research university in Cambridge, Massachusetts.',
+    name: 'Harare Institute of Technology (HIT)',
+    location: 'Harare, Zimbabwe',
+    logo: '/assets/hit-logo.jpg',
+    description: 'Focused on engineering, technology, and applied sciences programs.',
     requirements: [
-      { type: 'transcript', required: true, description: 'Official high school transcript' },
-      { type: 'sat-score', required: true, description: 'SAT Subject Tests recommended' },
-      { type: 'recommendation', required: true, description: '2 teacher recommendations + 1 counselor' },
-      { type: 'essay', required: true, description: 'Personal statement and short answers' }
+      { type: 'high-school-transcript', required: true, description: 'Official high school transcript' },
+      { type: 'recommendation-letter', required: true, description: 'Teacher recommendation letter' }
     ],
     supplementalQuestions: [
       {
         id: '1',
-        question: 'Describe the world you come from; for example, your family, clubs, school, community, city, or town.',
+        question: 'What motivates you to study at HIT?',
         type: 'essay',
-        maxWords: 300,
+        maxWords: 150,
         required: true
       }
     ],
     deadlines: {
-      earlyAction: '2024-11-01',
-      regular: '2024-01-01'
+      regular: '2025-09-15'
     },
-    applicationFee: 75,
-    acceptanceRate: 4.1,
-    ranking: 2
+    applicationFee: 20,
+    acceptanceRate: 70,
+    ranking: 3
+  },
+  {
+    id: '4',
+    name: 'Zimbabwe Open University (ZOU)',
+    location: 'Harare, Zimbabwe',
+    logo: '/assets/zou-logo.jpg',
+    description: 'Offers distance learning and open access programs for working adults and students.',
+    requirements: [
+      { type: 'high-school-transcript', required: true, description: 'Official high school transcript' },
+      { type: 'recommendation-letter', required: false, description: 'Optional recommendation letter' }
+    ],
+    supplementalQuestions: [
+      {
+        id: '1',
+        question: 'Why are you interested in ZOU’s distance learning programs?',
+        type: 'essay',
+        maxWords: 200,
+        required: true
+      }
+    ],
+    deadlines: {
+      regular: '2025-09-10'
+    },
+    applicationFee: 15,
+    acceptanceRate: 80,
+    ranking: 4
   }
 ];
 
