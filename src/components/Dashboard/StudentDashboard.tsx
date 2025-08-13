@@ -4,7 +4,6 @@ import {
   FileText, 
   CheckCircle, 
   AlertTriangle,
-  TrendingUp,
   Calendar,
   MessageSquare,
   Upload
@@ -54,7 +53,7 @@ const StudentDashboard: React.FC = () => {
       id: '1',
       type: 'document',
       title: 'Transcript uploaded',
-      subtitle: 'Harvard University application',
+      subtitle: 'University of Zimbabwe application',
       timestamp: '2 hours ago',
       icon: Upload,
       color: 'green'
@@ -63,7 +62,7 @@ const StudentDashboard: React.FC = () => {
       id: '2',
       type: 'application',
       title: 'Application submitted',
-      subtitle: 'Stanford University',
+      subtitle: 'Africa University',
       timestamp: '1 day ago',
       icon: CheckCircle,
       color: 'blue'
@@ -72,7 +71,7 @@ const StudentDashboard: React.FC = () => {
       id: '3',
       type: 'message',
       title: 'New message received',
-      subtitle: 'From MIT Admissions',
+      subtitle: 'From NUST Admissions',
       timestamp: '2 days ago',
       icon: MessageSquare,
       color: 'purple'
@@ -81,7 +80,7 @@ const StudentDashboard: React.FC = () => {
       id: '4',
       type: 'deadline',
       title: 'Deadline reminder',
-      subtitle: 'Harvard EA deadline in 15 days',
+      subtitle: 'Midlands State University deadline in 15 days',
       timestamp: '3 days ago',
       icon: AlertTriangle,
       color: 'orange'
@@ -91,24 +90,58 @@ const StudentDashboard: React.FC = () => {
   const upcomingDeadlines = [
     {
       id: '1',
-      university: 'Harvard University',
+      university: 'University of Zimbabwe',
       type: 'Early Decision',
-      date: '2024-11-01',
-      daysLeft: 15
+      date: '2025-09-30',
+      daysLeft: 17
     },
     {
       id: '2',
-      university: 'Stanford University',
+      university: 'Africa University',
       type: 'Early Action',
-      date: '2024-11-01',
-      daysLeft: 15
+      date: '2025-10-05',
+      daysLeft: 22
     },
     {
       id: '3',
-      university: 'MIT',
+      university: 'NUST',
       type: 'Early Action',
-      date: '2024-11-01',
-      daysLeft: 15
+      date: '2025-10-10',
+      daysLeft: 27
+    }
+  ];
+
+  // Zimbabwean universities list
+  const zimUniversities = [
+    {
+      id: '1',
+      name: 'University of Zimbabwe',
+      city: 'Harare',
+      website: 'http://www.uz.ac.zw/',
+    },
+    {
+      id: '2',
+      name: 'National University of Science and Technology (NUST)',
+      city: 'Bulawayo',
+      website: 'http://www.nust.ac.zw/',
+    },
+    {
+      id: '3',
+      name: 'Africa University',
+      city: 'Mutare',
+      website: 'http://www.africau.edu/',
+    },
+    {
+      id: '4',
+      name: 'Midlands State University',
+      city: 'Gweru',
+      website: '#',
+    },
+    {
+      id: '5',
+      name: 'Great Zimbabwe University',
+      city: 'Masvingo',
+      website: '#',
     }
   ];
 
@@ -239,6 +272,25 @@ const StudentDashboard: React.FC = () => {
             <Calendar className="w-5 h-5 text-orange-600" />
             <span className="text-sm font-medium text-orange-700">View Calendar</span>
           </button>
+        </div>
+      </div>
+
+      {/* Zimbabwean Universities */}
+      <div className="bg-white rounded-lg border border-gray-200 p-6">
+        <h2 className="text-lg font-semibold text-gray-900 mb-4">Zimbabwean Universities</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {zimUniversities.map((uni) => (
+            <a
+              key={uni.id}
+              href={uni.website}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow"
+            >
+              <p className="text-md font-medium text-gray-900">{uni.name}</p>
+              <p className="text-sm text-gray-500">{uni.city}</p>
+            </a>
+          ))}
         </div>
       </div>
     </div>
