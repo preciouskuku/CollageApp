@@ -10,7 +10,7 @@ import {
   Edit,
   Trash2,
   Award,
-  BookOpen,
+  
   FileText
 } from 'lucide-react';
 import jsPDF from 'jspdf';
