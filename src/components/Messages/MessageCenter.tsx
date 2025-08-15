@@ -42,8 +42,8 @@ const MessageCenter: React.FC = () => {
     {
       id: '1',
       from: {
-        name: 'Harvard Admissions',
-        email: 'admissions@harvard.edu',
+        name: 'Harare Institute of technology Admissions',
+        email: 'admissions@hit.edu',
         role: 'University'
       },
       to: {
@@ -60,7 +60,7 @@ Our admissions committee will be reviewing applications over the next few weeks.
 If you have any questions, please don't hesitate to reach out.
 
 Best regards,
-Harvard Admissions Office`,
+Harare Institute of Technology Admissions Office`,
       timestamp: '2024-10-20T10:30:00Z',
       read: false,
       type: 'received'
@@ -68,8 +68,8 @@ Harvard Admissions Office`,
     {
       id: '2',
       from: {
-        name: 'MIT Admissions',
-        email: 'admissions@mit.edu',
+        name: 'University of Zimbabwe Admissions',
+        email: 'admissions@uz.edu',
         role: 'University'
       },
       to: {
@@ -84,7 +84,7 @@ We are currently reviewing your application for admission and noticed that we ha
 Please have your high school send your transcript directly to our admissions office as soon as possible to ensure your application can be processed on time.
 
 Thank you,
-MIT Admissions`,
+university of zimbabwe Admissions`,
       timestamp: '2024-10-19T14:15:00Z',
       read: true,
       type: 'received'
