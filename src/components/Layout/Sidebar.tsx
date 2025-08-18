@@ -92,7 +92,7 @@ const Sidebar: React.FC<SidebarProps> = ({
       `}>
         <div className="flex items-center space-x-2 p-6 border-b border-gray-200">
           <GraduationCap className="w-8 h-8 text-blue-600" />
-          <h1 className="text-xl font-bold text-gray-900">CollegeApp</h1>
+          <h1 className="text-xl font-bold text-gray-900">ApplyIQ</h1>
         </div>
 
         <nav className="mt-6">
